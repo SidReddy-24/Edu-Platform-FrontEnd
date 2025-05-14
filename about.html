@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn more about EduProDev and our mission." />
+  <title>EduProDev | About Us</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .about-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 140, 0, 0.3), rgba(255, 165, 0, 0.3));
+      animation: gradientShift 10s ease infinite;
+    }
+
+    .about-header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-header p {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .mission-section {
+      background: white;
+      border-radius: 15px;
+      padding: 3rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .mission-section h2 {
+      color: #333;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .mission-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: #FF8C00;
+      border-radius: 2px;
+    }
+
+    .mission-section p {
+      color: #666;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: #FF8C00;
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 50%;
+      padding: 0 2rem;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: #FF8C00;
+      border-radius: 50%;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -60px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -60px;
+    }
+
+    .timeline-year {
+      color: #FF8C00;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-text {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .team-section {
+      padding: 4rem 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .team-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .team-info {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .team-info h3 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-info p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .team-social a {
+      color: #FF8C00;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .team-social a:hover {
+      color: #FFA500;
+    }
+
+    .stats-section {
+      background: linear-gradient(45deg, #FF8C00, #FFA500);
+      padding: 4rem 2rem;
+      color: white;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto 0;
+    }
+
+    .stat-card {
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="about-header">
+    <h1>About EduProDev</h1>
+    <p>Empowering learners worldwide with quality education and innovative learning experiences.</p>
+  </header>
+
+  <div class="container">
+    <section class="mission-section animate-fade-in">
+      <h2>Our Mission</h2>
+      <p>At EduProDev, we are dedicated to making quality education accessible to everyone. Through our innovative online platform, we connect passionate instructors with eager learners, creating a global community of knowledge seekers and sharers.</p>
+    </section>
+
+    <section class="timeline animate-fade-in">
+      <h2 class="section-title">Our Journey</h2>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-text">Founded with a vision to revolutionize online education, starting with just 3 instructors and a handful of courses.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-text">Reached a milestone of 10,000+ enrolled students, expanding our course offerings to meet growing demand.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-text">Expanded to 12 course categories, introducing specialized programs in emerging technologies.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-text">Launched our mobile app, making learning accessible on the go for our growing community.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section animate-fade-in">
+      <h2>Our Impact in Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Active Students</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Expert Instructors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Courses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Student Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section animate-fade-in">
+      <h2 class="section-title">Meet Our Leadership Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Ankit Mehra" class="team-image">
+          <div class="team-info">
+            <h3>Ankit Mehra</h3>
+            <p>CEO & Co-founder</p>
+            <p>Visionary leader with 15+ years of experience in education technology.</p>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Riya Joshi" class="team-image">
+          <div class="team-info">
+            <h3>Riya Joshi</h3>
+            <p>Chief Academic Officer</p>
+            <p>Education expert with a passion for curriculum development and student success.</p>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 EduProDev. All rights reserved.</p>
+  </footer>
+</body>
+</html>

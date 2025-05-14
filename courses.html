@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse online courses offered by EduProDev." />
+  <title>EduProDev | Courses</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 140, 0, 0.3), rgba(255, 165, 0, 0.3));
+      animation: gradientShift 10s ease infinite;
+    }
+
+    .page-header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .course-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
+      border-color: #FF8C00;
+    }
+
+    .course-card i {
+      font-size: 2.5rem;
+      color: #FF8C00;
+      margin-bottom: 1rem;
+    }
+
+    .course-card h3 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .course-card p {
+      color: #cccccc;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-card .btn-enroll {
+      background: #FF8C00;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .course-card .btn-enroll:hover {
+      background: #FFA500;
+      transform: translateY(-2px);
+    }
+
+    .course-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 2rem 0;
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #333;
+    }
+
+    .course-table th {
+      background: #FF8C00;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .course-table td {
+      padding: 1rem;
+      color: #ffffff;
+      border-bottom: 1px solid #333;
+    }
+
+    .course-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .course-table tr:hover td {
+      background: #242424;
+    }
+
+    .category-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .category-item {
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid #333;
+    }
+
+    .category-item:hover {
+      background: #FF8C00;
+      color: #000000;
+      border-color: #FF8C00;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 3rem 0;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #FF8C00;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>Explore Our Courses</h1>
+    <p>Discover a world of learning opportunities</p>
+  </header>
+
+  <div class="container">
+    <section class="animate-fade-in">
+      <h2 class="section-title">Featured Courses</h2>
+      <div class="grid">
+        <article class="course-card">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Master modern web development with HTML, CSS, JavaScript, and popular frameworks. Build responsive and interactive websites from scratch.</p>
+          <a href="coursedetail.html" class="btn-enroll">Learn More</a>
+        </article>
+        <article class="course-card">
+          <i class="fas fa-database"></i>
+          <h3>Data Science</h3>
+          <p>Dive into data analysis, machine learning, and AI. Learn Python, Pandas, and essential data science tools to become a data expert.</p>
+          <a href="coursedetail.html" class="btn-enroll">Learn More</a>
+        </article>
+        <article class="course-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>UI/UX Design</h3>
+          <p>Create beautiful and user-friendly interfaces. Learn design principles, tools, and techniques to become a professional UI/UX designer.</p>
+          <a href="coursedetail.html" class="btn-enroll">Learn More</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="animate-fade-in">
+      <h2 class="section-title">All Courses</h2>
+      <table class="course-table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Category</th>
+            <th>Duration</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Introduction to HTML & CSS</td>
+            <td><i class="fas fa-code"></i> Web</td>
+            <td>4 Weeks</td>
+            <td>Beginner</td>
+          </tr>
+          <tr>
+            <td>Python for Data Analysis</td>
+            <td><i class="fas fa-database"></i> Data Science</td>
+            <td>6 Weeks</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>UI/UX Fundamentals</td>
+            <td><i class="fas fa-paint-brush"></i> Design</td>
+            <td>3 Weeks</td>
+            <td>Beginner</td>
+          </tr>
+          <tr>
+            <td>Machine Learning Basics</td>
+            <td><i class="fas fa-brain"></i> AI</td>
+            <td>8 Weeks</td>
+            <td>Advanced</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="animate-fade-in">
+      <h2 class="section-title">Course Categories</h2>
+      <div class="category-list">
+        <div class="category-item"><i class="fas fa-code"></i> Web Development</div>
+        <div class="category-item"><i class="fas fa-database"></i> Data Science</div>
+        <div class="category-item"><i class="fas fa-brain"></i> Artificial Intelligence</div>
+        <div class="category-item"><i class="fas fa-paint-brush"></i> UI/UX Design</div>
+        <div class="category-item"><i class="fas fa-mobile-alt"></i> Mobile Development</div>
+        <div class="category-item"><i class="fas fa-cloud"></i> Cloud Computing</div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 EduProDev. All rights reserved.</p>
+  </footer>
+</body>
+</html>

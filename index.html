@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduProDev is your gateway to quality online education." />
+  <meta name="keywords" content="online courses, education, elearning" />
+  <title>EduProDev | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 140, 0, 0.3), rgba(255, 165, 0, 0.3));
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .features {
+      padding: 4rem 0;
+      background: #ffffff;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .features h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #FF8C00;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .feature-card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
+      border-color: #FF8C00;
+    }
+
+    .feature-card i {
+      font-size: 3rem;
+      color: #FF8C00;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .feature-card p {
+      color: #cccccc;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      background: linear-gradient(45deg, #FF8C00, #FFA500);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-cta {
+      background: #FF8C00;
+      color: #000000;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+      font-weight: bold;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+      background: #FFA500;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="floating">Welcome to EduProDev</h1>
+      <p>Empowering Future Innovators Through Quality Education</p>
+      <a href="courses.html" class="btn btn-cta">Explore Courses</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Why Choose EduProDev?</h2>
+      <div class="grid">
+        <article class="feature-card">
+          <i class="fas fa-certificate"></i>
+          <h3>Certified Courses</h3>
+          <p>Our courses are recognized by leading institutions and taught by industry experts with years of experience.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-users"></i>
+          <h3>Interactive Learning</h3>
+          <p>Engage with instructors and peers through our innovative learning platform and rich multimedia content.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-clock"></i>
+          <h3>Flexible Schedule</h3>
+          <p>Learn at your own pace with our self-paced courses, designed to fit your busy lifestyle.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Modern Curriculum</h3>
+          <p>Stay ahead with our up-to-date curriculum that covers the latest technologies and industry trends.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-headset"></i>
+          <h3>24/7 Support</h3>
+          <p>Get help whenever you need it with our dedicated support team and active community forums.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Career Ready</h3>
+          <p>Gain practical skills and knowledge that will help you excel in your chosen career path.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Start Your Learning Journey?</h2>
+    <p>Join thousands of students who have already transformed their careers with EduProDev.</p>
+    <a href="contact.html" class="btn-cta">Get Started Today</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 EduProDev. All rights reserved.</p>
+  </footer>
+</body>
+</html>
